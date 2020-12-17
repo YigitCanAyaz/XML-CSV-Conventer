@@ -9,6 +9,8 @@ public class DatabaseConnectionManager {
 
 	private Connection conn;
 
+        private String url = "jdbc:mysql://localhost:3306/employees_database?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+
 	private static DatabaseConnectionManager connectionInstance = new DatabaseConnectionManager();
 
 	private DatabaseConnectionManager() {
@@ -26,7 +28,7 @@ public class DatabaseConnectionManager {
 	 */
 	public void connect() throws SQLException {
 		// processing specific to database connection details...
-		conn = DriverManager.getConnection("Some/Database/URL");
+		conn = DriverManager.getConnection("url, "root", "pass123");
 		System.out.println("Established Database Connection...");
 	}
 
